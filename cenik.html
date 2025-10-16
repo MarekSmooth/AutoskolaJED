@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ceník – Autoškola JEĎ! Brno</title>
+<link rel="icon" href="./public/favicon.ico" />
+<link rel="stylesheet" href="./src/css/styles.css" />
+</head>
+<body>
+<main class="container">
+<h1>Ceník</h1>
+<ul id="cenik"></ul>
+</main>
+<script type="module">
+fetch('./data/cenik.json')
+.then(r => r.json())
+.then(items => {
+const ul = document.getElementById('cenik');
+ul.innerHTML = items.map(i => `<li><strong>${i.nazev}</strong> – ${i.cena} Kč</li>`).join('');
+});
+</script>
+</body>
+</html>
