@@ -28,11 +28,12 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 2rem;
-  background: #f5f5f5;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .logo {
@@ -71,13 +72,13 @@ nav a::after {
   bottom: 0;
   left: 0;
   width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--blue), var(--orange));
+  height: 2px;
+  background: var(--blue);
   transition: width 0.3s ease;
 }
 
 nav a:hover {
-  color: var(--orange);
+  color: var(--blue);
 }
 
 nav a:hover::after {
@@ -87,9 +88,10 @@ nav a:hover::after {
 .hero {
   padding: 6rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, rgba(43, 158, 232, 0.05) 0%, rgba(245, 130, 32, 0.05) 100%);
-  border-radius: 1rem;
-  margin: 2rem 0;
+  background: rgba(43, 158, 232, 0.03);
+  border-radius: 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .hero h1 {
@@ -112,19 +114,20 @@ nav a:hover::after {
 .cta {
   display: inline-block;
   padding: 1rem 2.5rem;
-  border-radius: 50px;
-  background: linear-gradient(135deg, var(--blue), var(--orange));
+  border-radius: 8px;
+  background: var(--blue);
   color: #fff;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(43, 158, 232, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(43, 158, 232, 0.4);
+  background: #1e8ad3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .features {
@@ -135,25 +138,18 @@ nav a:hover::after {
 }
 
 .feature-card {
-  padding: 2rem;
+  padding: 2.5rem;
   background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-top: 4px solid var(--blue);
-}
-
-.feature-card:nth-child(2) {
-  border-top-color: var(--orange);
-}
-
-.feature-card:nth-child(3) {
-  border-top-color: var(--blue);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border-color: rgba(43, 158, 232, 0.2);
 }
 
 .feature-card h3 {
@@ -185,19 +181,19 @@ nav a:hover::after {
   bottom: -0.5rem;
   left: 0;
   width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--blue), var(--orange));
+  height: 3px;
+  background: var(--blue);
 }
 
 .card {
   display: grid;
   gap: 1rem;
   max-width: 520px;
-  padding: 2rem;
-  border: none;
-  border-radius: 1rem;
+  padding: 2.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
   background: #fff;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
 label {
@@ -210,14 +206,16 @@ label {
 input, textarea {
   font: inherit;
   padding: 0.8rem 1rem;
-  border: 2px solid #e9ecef;
-  border-radius: 0.5rem;
-  transition: border-color 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: #fff;
 }
 
 input:focus, textarea:focus {
   outline: none;
   border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(43, 158, 232, 0.1);
 }
 
 textarea {
@@ -228,18 +226,20 @@ textarea {
 button {
   cursor: pointer;
   padding: 0.9rem 2rem;
-  background: linear-gradient(135deg, var(--blue), var(--orange));
+  background: var(--blue);
   color: #fff;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(43, 158, 232, 0.3);
+  background: #1e8ad3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 footer {
