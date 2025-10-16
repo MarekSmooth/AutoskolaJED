@@ -20,16 +20,56 @@
 </nav>
 </header>
 <main class="container">
-<h1>Ceník</h1>
-<ul id="cenik"></ul>
+<div class="content-section">
+<h1>Ceník služeb</h1>
+<div class="features">
+<div class="feature-card">
+<h3>Základní kurz sk. B</h3>
+<p>Kompletní kurz včetně teórie a jízd</p>
+<p style="font-size: 2rem; font-weight: 700; color: var(--blue); margin-top: 1rem;">16 900 Kč</p>
+</div>
+<div class="feature-card">
+<h3>Kondiční jízda</h3>
+<p>Jedna jízda (45 minut)</p>
+<p style="font-size: 2rem; font-weight: 700; color: var(--orange); margin-top: 1rem;">450 Kč</p>
+</div>
+<div class="feature-card">
+<h3>Extra jízda</h3>
+<p>Dodatečná jízda nad rámec kurzu</p>
+<p style="font-size: 2rem; font-weight: 700; color: var(--blue); margin-top: 1rem;">500 Kč</p>
+</div>
+</div>
+<p style="margin-top: 2rem; color: var(--gray); text-align: center;">
+Ceny jsou uvedené včetně DPH. Pro více informací nás kontaktujte.
+</p>
+</div>
 </main>
-<script type="module">
-fetch('./data/cenik.json')
-.then(r => r.json())
-.then(items => {
-const ul = document.getElementById('cenik');
-ul.innerHTML = items.map(i => `<li><strong>${i.nazev}</strong> – ${i.cena} Kč</li>`).join('');
-});
-</script>
+<footer>
+<div class="footer-content container">
+<div class="footer-section">
+<h3>Autoškola JEĎ!</h3>
+<p>Tvoje autoškola v Brně<br>
+Moderní výuka řízení<br>
+Sk. B a kondiční jízdy</p>
+</div>
+<div class="footer-section">
+<h3>Kontakt</h3>
+<p>Tel: <a href="tel:+420123456789">+420 123 456 789</a><br>
+Email: <a href="mailto:info@autoskolaajed.cz">info@autoskolaajed.cz</a><br>
+Brno, Česká republika</p>
+</div>
+<div class="footer-section">
+<h3>Rychlé odkazy</h3>
+<p>
+<a href="./kurzy.html">Naše kurzy</a><br>
+<a href="./cenik.html">Ceník služeb</a><br>
+<a href="./kontakt.html">Kontaktní formulář</a>
+</p>
+</div>
+</div>
+<div class="footer-bottom container">
+<small>© 2025 Autoškola JEĎ! Brno. Všechna práva vyhrazena.</small>
+</div>
+</footer>
 </body>
 </html>

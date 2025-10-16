@@ -20,14 +20,66 @@
 </nav>
 </header>
 <main class="container">
-<h1>Kontakt</h1>
+<div class="content-section">
+<h1>Kontaktujte nás</h1>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem;">
+<div>
+<h2 style="margin-bottom: 1.5rem; color: var(--dark);">Napište nám</h2>
 <form action="https://formspree.io/f/TVUJ_KOD" method="POST" class="card">
 <label>Jméno<input name="name" required></label>
 <label>Email<input type="email" name="email" required></label>
-<label>Zpráva<textarea name="message" required></textarea></label>
-<button type="submit">Odeslat</button>
+<label>Telefon<input type="tel" name="phone"></label>
+<label>Zpráva<textarea name="message" required placeholder="Napište nám svůj dotaz..."></textarea></label>
+<button type="submit">Odeslat zprávu</button>
 </form>
-<p><a href="tel:+420123456789">Zavolej nám</a></p>
+</div>
+<div>
+<h2 style="margin-bottom: 1.5rem; color: var(--dark);">Kontaktní údaje</h2>
+<div class="feature-card">
+<h3>📞 Telefon</h3>
+<p><a href="tel:+420123456789" style="color: var(--blue); text-decoration: none; font-size: 1.2rem; font-weight: 600;">+420 123 456 789</a></p>
+<p style="color: var(--gray); margin-top: 0.5rem;">Po-Pá: 8:00 - 18:00</p>
+</div>
+<div class="feature-card" style="margin-top: 1.5rem;">
+<h3>✉️ Email</h3>
+<p><a href="mailto:info@autoskolaajed.cz" style="color: var(--blue); text-decoration: none; font-size: 1.2rem; font-weight: 600;">info@autoskolaajed.cz</a></p>
+<p style="color: var(--gray); margin-top: 0.5rem;">Odpovíme do 24 hodin</p>
+</div>
+<div class="feature-card" style="margin-top: 1.5rem;">
+<h3>📍 Adresa</h3>
+<p style="font-weight: 600; color: var(--dark);">Autoškola JEĎ!</p>
+<p style="color: var(--gray);">Brno<br>Česká republika</p>
+</div>
+</div>
+</div>
+</div>
 </main>
+<footer>
+<div class="footer-content container">
+<div class="footer-section">
+<h3>Autoškola JEĎ!</h3>
+<p>Tvoje autoškola v Brně<br>
+Moderní výuka řízení<br>
+Sk. B a kondiční jízdy</p>
+</div>
+<div class="footer-section">
+<h3>Kontakt</h3>
+<p>Tel: <a href="tel:+420123456789">+420 123 456 789</a><br>
+Email: <a href="mailto:info@autoskolaajed.cz">info@autoskolaajed.cz</a><br>
+Brno, Česká republika</p>
+</div>
+<div class="footer-section">
+<h3>Rychlé odkazy</h3>
+<p>
+<a href="./kurzy.html">Naše kurzy</a><br>
+<a href="./cenik.html">Ceník služeb</a><br>
+<a href="./kontakt.html">Kontaktní formulář</a>
+</p>
+</div>
+</div>
+<div class="footer-bottom container">
+<small>© 2025 Autoškola JEĎ! Brno. Všechna práva vyhrazena.</small>
+</div>
+</footer>
 </body>
 </html>
