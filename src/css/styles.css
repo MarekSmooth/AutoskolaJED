@@ -1,1 +1,12 @@
-
+:root { --max: 1080px; }
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; color: #111; }
+.container { max-width: var(--max); margin: 0 auto; padding: 1rem; }
+header { display:flex; align-items:center; gap:1rem; justify-content:space-between; }
+nav a { margin-right: 1rem; text-decoration: none; color: #111; }
+.hero { padding: 4rem 0; text-align: center; }
+.cta { display:inline-block; padding:.75rem 1.25rem; border-radius:.5rem; background:#111; color:#fff; text-decoration:none; }
+.card { display:grid; gap:.5rem; max-width:520px; padding:1rem; border:1px solid #e5e5e5; border-radius:.5rem; }
+label { display:grid; gap:.25rem; }
+input, textarea, button { font: inherit; padding:.6rem .7rem; }
+button { cursor:pointer; }
