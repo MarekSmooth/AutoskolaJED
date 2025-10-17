@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Online přihláška – Autoškola JEĎ! Brno</title>
+<link rel="icon" href="./public/favicon.ico" />
+<link rel="stylesheet" href="./src/css/styles.css" />
+</head>
+<body>
+<header class="container">
+<a href="./index.html" class="logo">
+<img src="./public/LogoAJED.png" alt="Autoškola JEĎ! Brno" />
+</a>
+<nav>
+<a href="./index.html">Úvod</a>
+<a href="./o-nas.html">O nás</a>
+<a href="./nabizime.html">Nabízíme</a>
+<a href="./cenik.html">Ceník</a>
+<a href="./odkazy.html">Odkazy a dokumenty</a>
+<a href="./kontakt.html">Kontakt</a>
+<a href="./prihlaska.html" class="nav-cta">Online přihláška</a>
+</nav>
+</header>
+<main class="container">
+<div class="content-section">
+<h1>Online přihláška</h1>
+<p style="font-size: 1.15rem; color: var(--gray); margin-bottom: 3rem; max-width: 800px;">
+Vyplň přihlášku a začni svou cestu k řidičskému průkazu. Ozveme se ti do 24 hodin.
+</p>
+
+<div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; margin-top: 3rem;">
+<div>
+<form action="https://formspree.io/f/TVUJ_KOD" method="POST" class="card" style="max-width: 100%;">
+<h2 style="margin-bottom: 1.5rem; color: var(--dark); font-size: 1.5rem;">Základní údaje</h2>
+<label>Jméno a příjmení<input name="name" required></label>
+<label>Datum narození<input type="date" name="birthdate" required></label>
+<label>Email<input type="email" name="email" required></label>
+<label>Telefon<input type="tel" name="phone" required></label>
+<label>Adresa<input name="address" required></label>
+
+<h2 style="margin: 2rem 0 1.5rem; color: var(--dark); font-size: 1.5rem;">Typ kurzu</h2>
+<label style="flex-direction: row; align-items: center; gap: 0.75rem;">
+<input type="radio" name="course_type" value="sk_b" required style="width: auto; margin: 0;">
+<span>Řidičské oprávnění sk. B</span>
+</label>
+<label style="flex-direction: row; align-items: center; gap: 0.75rem;">
+<input type="radio" name="course_type" value="kondicni" style="width: auto; margin: 0;">
+<span>Kondiční jízdy</span>
+</label>
+<label style="flex-direction: row; align-items: center; gap: 0.75rem;">
+<input type="radio" name="course_type" value="doskoleni" style="width: auto; margin: 0;">
+<span>Doškolení řidičů</span>
+</label>
+
+<label>Poznámka (volitelné)<textarea name="message" placeholder="Máš nějaké dotazy nebo speciální požadavky?"></textarea></label>
+
+<div style="padding: 1.5rem; background: rgba(43, 158, 232, 0.05); border-radius: 8px; margin-top: 1rem;">
+<label style="flex-direction: row; align-items: flex-start; gap: 0.75rem; font-weight: normal;">
+<input type="checkbox" name="gdpr" required style="width: auto; margin-top: 0.25rem;">
+<span style="font-size: 0.9rem; line-height: 1.6;">Souhlasím se zpracováním osobních údajů pro účely tohoto kurzu v souladu s GDPR a <a href="#" style="color: var(--blue); text-decoration: underline;">Všeobecnými obchodními podmínkami</a>.</span>
+</label>
+</div>
+
+<button type="submit" style="margin-top: 1.5rem; width: 100%;">Odeslat přihlášku</button>
+</form>
+</div>
+
+<div>
+<div class="feature-card">
+<h3>Co bude dál?</h3>
+<div style="margin-top: 1.5rem;">
+<div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+<div style="min-width: 35px; height: 35px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.9rem;">1</div>
+<div>
+<h4 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Přijmeme tvou přihlášku</h4>
+<p style="color: var(--gray); font-size: 0.95rem; line-height: 1.6;">Zkontrolujeme údaje a ozveme se ti do 24 hodin</p>
+</div>
+</div>
+<div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+<div style="min-width: 35px; height: 35px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.9rem;">2</div>
+<div>
+<h4 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Domluvíme detaily</h4>
+<p style="color: var(--gray); font-size: 0.95rem; line-height: 1.6;">Společně doladíme termíny a vše potřebné</p>
+</div>
+</div>
+<div style="display: flex; gap: 1rem;">
+<div style="min-width: 35px; height: 35px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.9rem;">3</div>
+<div>
+<h4 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Začneme s výukou</h4>
+<p style="color: var(--gray); font-size: 0.95rem; line-height: 1.6;">Můžeš se těšit na kvalitní výuku a příjemnou atmosféru</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="feature-card" style="margin-top: 1.5rem;">
+<h3>Potřebuješ poradit?</h3>
+<p style="margin-top: 1rem; margin-bottom: 1.5rem;">Nejsi si jistý, který kurz je pro tebe ten pravý? Rádi ti poradíme.</p>
+<div>
+<p style="margin-bottom: 0.5rem;"><strong>Telefon:</strong></p>
+<p><a href="tel:+420123456789" style="color: var(--blue); text-decoration: none; font-size: 1.2rem; font-weight: 700;">+420 123 456 789</a></p>
+<p style="color: var(--gray); font-size: 0.9rem; margin-top: 0.25rem;">Po-Pá: 8:00 - 18:00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="footer-content container">
+<div class="footer-section">
+<h3>Autoškola JEĎ!</h3>
+<p>Tvoje autoškola v Brně<br>
+Moderní výuka řízení<br>
+Sk. B a kondiční jízdy</p>
+</div>
+<div class="footer-section">
+<h3>Kontakt</h3>
+<p>Tel: <a href="tel:+420123456789">+420 123 456 789</a><br>
+Email: <a href="mailto:info@autoskolaajed.cz">info@autoskolaajed.cz</a><br>
+Brno, Česká republika</p>
+</div>
+<div class="footer-section">
+<h3>Rychlé odkazy</h3>
+<p>
+<a href="./nabizime.html">Co nabízíme</a><br>
+<a href="./cenik.html">Ceník služeb</a><br>
+<a href="./kontakt.html">Kontaktní formulář</a>
+</p>
+</div>
+</div>
+<div class="footer-bottom container">
+<small>© 2025 Autoškola JEĎ! Brno. Všechna práva vyhrazena.</small>
+</div>
+</footer>
+</body>
+</html>
