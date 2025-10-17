@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Lora:wght@600;700&display=swap');
+
 :root {
   --max: 1200px;
   --blue: #2B9EE8;
@@ -5,12 +7,13 @@
   --dark: #1a1a1a;
   --light: #f8f9fa;
   --gray: #6c757d;
+  --beige: #f9f7f4;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+  font-family: 'Outfit', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
   margin: 0;
   color: var(--dark);
   line-height: 1.6;
@@ -86,81 +89,140 @@ nav a:hover::after {
 }
 
 .hero {
-  padding: 6rem 2rem;
+  padding: 8rem 2rem;
   text-align: center;
-  background: rgba(43, 158, 232, 0.03);
+  background: linear-gradient(135deg, rgba(43, 158, 232, 0.08) 0%, rgba(245, 130, 32, 0.05) 100%);
   border-radius: 0;
   margin: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(43, 158, 232, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-family: 'Lora', serif;
+  font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: var(--dark);
-  line-height: 1.2;
+  line-height: 1.15;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.02em;
 }
 
 .hero p {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: var(--gray);
-  margin-bottom: 2rem;
-  max-width: 600px;
+  margin-bottom: 2.5rem;
+  max-width: 680px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+  font-weight: 400;
 }
 
 .cta {
   display: inline-block;
-  padding: 1rem 2.5rem;
-  border-radius: 8px;
-  background: var(--blue);
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
+  background: var(--orange);
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(245, 130, 32, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
 }
 
 .cta:hover {
-  background: #1e8ad3;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #d96f1a;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(245, 130, 32, 0.4);
 }
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin: 4rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin: 5rem 0;
 }
 
 .feature-card {
-  padding: 2.5rem;
+  padding: 3rem 2.5rem;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--orange) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  border-color: rgba(43, 158, 232, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  border-color: rgba(43, 158, 232, 0.3);
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
 }
 
 .feature-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
   color: var(--dark);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .feature-card p {
   color: var(--gray);
-  line-height: 1.8;
+  line-height: 1.75;
+  font-size: 1.05rem;
 }
 
 .content-section {
@@ -168,21 +230,25 @@ nav a:hover::after {
 }
 
 .content-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+  margin-bottom: 3rem;
   color: var(--dark);
   position: relative;
   display: inline-block;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .content-section h1::after {
   content: '';
   position: absolute;
-  bottom: -0.5rem;
+  bottom: -0.75rem;
   left: 0;
-  width: 60px;
-  height: 3px;
-  background: var(--blue);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--orange) 0%, var(--blue) 100%);
+  border-radius: 2px;
 }
 
 .card {
@@ -245,8 +311,19 @@ button:hover {
 footer {
   background: var(--dark);
   color: #fff;
-  padding: 3rem 2rem;
-  margin-top: 4rem;
+  padding: 4rem 2rem 2rem;
+  margin-top: 6rem;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--orange) 100%);
 }
 
 .footer-content {
@@ -292,12 +369,15 @@ ul {
   .logo img { height: 80px; }
   nav { gap: 1rem; }
   nav a { font-size: 0.95rem; }
-  .hero h1 { font-size: 2.2rem; }
-  .hero { padding: 4rem 1.5rem; }
-  .features { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2.5rem; }
+  .hero { padding: 5rem 1.5rem; }
+  .hero p { font-size: 1.15rem; }
+  .features { grid-template-columns: 1fr; gap: 2rem; }
   .container { padding: 1rem; }
   header { padding: 1rem; }
+  .content-section h1 { font-size: 2.2rem; }
   .content-section > div[style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
   }
+  .cta { padding: 1rem 2rem; font-size: 1rem; }
 }
