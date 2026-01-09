@@ -34,7 +34,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
+  padding: 0;
   background: transparent;
   box-shadow: none;
   position: sticky;
@@ -46,6 +46,7 @@ header {
 .logo {
   transition: transform 0.3s ease;
   z-index: 101;
+  padding: 1.5rem 2rem;
 }
 
 .logo:hover {
