@@ -111,7 +111,7 @@ header > .cta:hover {
   position: relative;
   z-index: 1;
   letter-spacing: -0.02em;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   padding: 1.5rem 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -131,7 +131,7 @@ header > .cta:hover {
   position: relative;
   z-index: 1;
   font-weight: 500;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
