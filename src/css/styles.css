@@ -111,7 +111,7 @@ header > .cta:hover {
   position: relative;
   z-index: 1;
   letter-spacing: -0.02em;
-  background: radial-gradient(circle, rgba(245, 130, 32, 0.08) 0%, transparent 70%);
+  background: rgba(0, 0, 0, 0.6);
   padding: 1.5rem 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -169,7 +169,7 @@ header > .cta:hover {
 
 .feature-card {
   padding: 3rem 2.5rem;
-  background: #fff;
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
