@@ -696,7 +696,7 @@ ul {
   background: none;
   border: none;
   font-size: 2.5rem;
-  color: var(--dark);
+  color: #fff;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
