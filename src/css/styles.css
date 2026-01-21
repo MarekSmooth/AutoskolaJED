@@ -223,7 +223,7 @@ header > .cta:hover {
   font-family: 'Lora', serif;
   font-size: 3rem;
   margin-bottom: 3rem;
-  color: var(--dark);
+  color: #fff;
   position: relative;
   display: inline-block;
   font-weight: 700;
