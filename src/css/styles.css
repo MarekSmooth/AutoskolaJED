@@ -24,6 +24,14 @@ body {
   background-repeat: no-repeat;
 }
 
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-position: top center;
+    background-size: cover;
+  }
+}
+
 .container {
   max-width: var(--max);
   margin: 0 auto;
