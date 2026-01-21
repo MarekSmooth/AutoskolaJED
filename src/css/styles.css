@@ -27,10 +27,13 @@ body {
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
+    background-size: contain;
     background-position: top center;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000; /* aby nebyly pruhy průhledné */
   }
 }
+
 
 .container {
   max-width: var(--max);
