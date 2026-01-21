@@ -793,5 +793,18 @@ ul {
   }
 }
 body .contact-cta {
-  background: red;
+  padding: 60px 20px;
+}
+
+body .contact-cta-content {
+  background: rgba(0, 0, 0, 0.4); /* černá, 40 % */
+  color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+body .contact-cta-content a {
+  color: #fff;
 }
