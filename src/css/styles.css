@@ -210,7 +210,7 @@ header > .cta:hover {
 }
 
 .feature-card p {
-  color: var(--gray);
+  color: #fff;
   line-height: 1.75;
   font-size: 1.05rem;
 }
