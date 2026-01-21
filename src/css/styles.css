@@ -763,7 +763,7 @@ ul {
 
 .modal-note {
   text-align: center;
-  color: var(--gray);
+  color: #fff;
   margin: 2rem 0;
   font-size: 1.1rem;
 }
