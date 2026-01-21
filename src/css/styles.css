@@ -505,11 +505,7 @@ ul {
     padding: 2rem 1.5rem;
   }
 
-.contact-cta {
-  background: #111;
-  padding: 60px 20px;
-  color: white;
-}
+.contact-cta { background: red !important; }
 
 
   footer {
