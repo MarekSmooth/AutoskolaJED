@@ -797,7 +797,7 @@ body .contact-cta {
 }
 
 body .contact-cta-content {
-  background: rgba(0, 0, 0, 0.4); /* černá, 40 % */
+  background: rgba(0, 0, 0, 0.5); /* černá, 40 % */
   color: #fff;
   padding: 40px;
   border-radius: 12px;
