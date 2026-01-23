@@ -63,7 +63,6 @@ header {
   height: 200px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 4px 12px rgba(244, 244, 244, 0.35)) drop-shadow(-4px 4px 8px rgba(254, 252, 252, 0.45));
 }
 
 
