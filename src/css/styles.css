@@ -35,7 +35,7 @@ header {
   align-items: center;
   justify-content: flex-end;
   padding: 0 2rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: transparent;
   backdrop-filter: blur(12px);
   box-shadow: none;
   position: sticky;
