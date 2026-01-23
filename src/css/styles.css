@@ -5,38 +5,38 @@
   font-family: 'Orbitron';
   src: url('/fonts/Orbitron-Regular-BF66babf324fbdd.ttf') format('truetype');
   font-weight: 400;
+  font-style: normal;
 }
-
 @font-face {
   font-family: 'Orbitron';
   src: url('/fonts/Orbitron-Medium-BF66babf321bef0.ttf') format('truetype');
   font-weight: 500;
+  font-style: normal;
 }
-
 @font-face {
   font-family: 'Orbitron';
   src: url('/fonts/Orbitron-SemiBold-BF66babf323d53a.ttf') format('truetype');
   font-weight: 600;
+  font-style: normal;
 }
-
 @font-face {
   font-family: 'Orbitron';
   src: url('/fonts/Orbitron-Bold-BF66babf3200d61.ttf') format('truetype');
   font-weight: 700;
+  font-style: normal;
 }
-
 @font-face {
   font-family: 'Orbitron';
   src: url('/fonts/Orbitron-ExtraBold-BF66babf320fac7.ttf') format('truetype');
   font-weight: 800;
+  font-style: normal;
 }
-
 @font-face {
   font-family: 'Orbitron';
   src: url('/fonts/Orbitron-Black-BF66babf32268a1.ttf') format('truetype');
   font-weight: 900;
+  font-style: normal;
 }
-
 
 :root {
   --max: 1200px;
@@ -68,6 +68,10 @@ body {
   padding: 1rem 2rem;
 }
 
+/* =========================
+   HEADER + LOGO
+========================= */
+
 header {
   display: flex;
   align-items: center;
@@ -83,6 +87,7 @@ header {
   overflow: visible;
 }
 
+/* Logo */
 .logo {
   position: absolute;
   left: 2rem;
@@ -92,17 +97,15 @@ header {
   transition: transform 0.3s ease;
 }
 
-.logo:hover {
-  transform: scale(1.05);
-}
+.logo:hover { transform: scale(1.05); }
 
 .logo img {
-  height: 200px;
+  height: clamp(110px, 6vw, 200px);
   width: auto;
   display: block;
 }
 
-
+/* Header buttons */
 .header-buttons {
   display: flex;
   gap: 1rem;
@@ -110,7 +113,7 @@ header {
 }
 
 .header-buttons .cta {
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1.2rem;
   font-size: 0.95rem;
   box-shadow: 0 2px 8px rgba(245, 130, 32, 0.2);
   margin: 0;
@@ -121,79 +124,88 @@ header {
   box-shadow: 0 4px 12px rgba(245, 130, 32, 0.3);
 }
 
+/* =========================
+   HERO (fix: vpravo, box kryje text, nikdy nepřeteče)
+========================= */
+
 .hero {
   padding: 10rem 2rem 8rem 2rem;
-  border-radius: 0;
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  display: flex;
+  margin: 0 0 0 calc(-50vw + 50%);
+  width: 100vw;
   min-height: 600px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  position: relative;
+  overflow: visible;
 }
 
+/* Wrapper vpravo + pevný pravý okraj */
 .hero-content {
-  display: block;
-  width: 100%;
+  width: min(1000px, 92vw);
+  margin-left: auto;
+  padding-right: 2rem;
+  text-align: right;
 }
 
-/*.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -30%;
-  left: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(245, 130, 32, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  display: none;
-} */
-
+/* H1: pravý okraj textu zarovnán doprava, box vždy kryje, nikdy nepřeteče */
 .hero h1 {
   font-family: "Orbitron", sans-serif;
-  letter-spacing: 0.04em;
-  font-size: 4rem;
   font-weight: 800;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
   color: #fff;
   line-height: 1.15;
-  position: relative;
-  z-index: 1;
+  letter-spacing: 0.04em;
+
+  display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
+
   background: rgba(0, 0, 0, 0.6);
-  padding: 1.5rem 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  display: block;
-  width: 1100px;
+
+  padding: 1.2rem 1.8rem;
+
+  margin: 0 1rem 1.2rem 0;
   text-align: center;
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: 2rem;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  font-size: clamp(1.8rem, 3.6vw, 4rem);
 }
 
 
+/* Subtitle – drží se vpravo, box kryje */
 .hero-subtitle {
   font-family: "Orbitron", sans-serif;
-  font-size: 2.56rem;
-  color: #fff;
-  margin-bottom: 2.5rem;
-  line-height: 1.15;
-  position: relative;
-  z-index: 1;
   font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+
+  display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
+
   background: rgba(0, 0, 0, 0.6);
-  padding: 1.5rem 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  letter-spacing: 0.04em;
-  display: block;
-  width: 1100px;
+
+  padding: 1rem 1.6rem;
+  margin: 0 1rem 2.2rem 0;
+
   text-align: center;
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: 2rem;
+  font-size: clamp(1.1rem, 2.2vw, 2.2rem);
 }
+
+
+/* =========================
+   BUTTONS
+========================= */
 
 .cta {
   display: inline-block;
@@ -217,6 +229,10 @@ header {
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(245, 130, 32, 0.4);
 }
+
+/* =========================
+   FEATURES
+========================= */
 
 .features {
   display: grid;
@@ -243,7 +259,7 @@ header {
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, var(--blue) 0%, var(--orange) 100%); 
+  background: linear-gradient(90deg, var(--blue) 0%, var(--orange) 100%);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -255,9 +271,7 @@ header {
   border-color: rgba(43, 158, 232, 0.3);
 }
 
-.feature-card:hover::before {
-  transform: scaleX(1);
-}
+.feature-card:hover::before { transform: scaleX(1); }
 
 .feature-card h3 {
   font-size: 1.6rem;
@@ -273,9 +287,11 @@ header {
   font-size: 1.05rem;
 }
 
-.content-section {
-  padding: 3rem 2rem;
-}
+/* =========================
+   CONTENT / FORMS
+========================= */
+
+.content-section { padding: 3rem 2rem; }
 
 .content-section h1 {
   font-family: 'Lora', serif;
@@ -356,6 +372,10 @@ button:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* =========================
+   FOOTER
+========================= */
+
 footer {
   background: rgba(26, 26, 26, 0.85);
   backdrop-filter: blur(12px);
@@ -412,268 +432,12 @@ footer::before {
   font-size: 0.95rem;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
+ul { list-style: none; padding: 0; }
 
-@media (max-width: 1024px) {
-  .container {
-    padding: 1rem 1.5rem;
-  }
+/* =========================
+   MODAL
+========================= */
 
-  nav {
-    gap: 1rem;
-  }
-
-  nav a {
-    font-size: 0.95rem;
-  }
-
-  .hero h1 {
-    font-size: 3.2rem;
-  }
-
-  .hero p {
-    font-size: 1.25rem;
-  }
-
-  .features {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
-
-  header {
-    height: 75px;
-    justify-content: flex-end;
-    padding: 0 1.5rem;
-    position: sticky;
-    top: 0;
-  }
-
-  .logo {
-    left: 1rem;
-    top: 15px;
-  }
-
-  .logo img {
-    height: 100px;
-  }
-
-  .header-buttons {
-    gap: 0.5rem;
-  }
-
-  .header-buttons .cta {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.8rem;
-  }
-
-  nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: #fff;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 5rem 2rem 2rem;
-    gap: 0;
-    box-shadow: -4px 0 16px rgba(0,0,0,0.1);
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  nav.active {
-    right: 0;
-  }
-
-  nav a {
-    font-size: 1rem;
-    padding: 0.75rem 0;
-    width: 100%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  }
-
-  nav a::after {
-    display: none;
-  }
-
-  nav a.nav-cta {
-    margin-top: 0.75rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    padding: 0.85rem 1.5rem;
-    border-bottom: none;
-  }
-
-  .hero {
-    padding: 4rem 1.5rem;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-    line-height: 1.2;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
-  }
-
-  .hero::before,
-  .hero::after {
-    width: 350px;
-    height: 350px;
-  }
-
-  .cta {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-
-  .features {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .feature-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .content-section {
-    padding: 2rem 1rem;
-  }
-
-  .content-section h1 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .content-section > div[style*="grid-template-columns"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  .card {
-    padding: 2rem 1.5rem;
-  }
-
-
-  footer {
-    padding: 3rem 1.5rem 1.5rem;
-    margin-top: 4rem;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-}
-
-@media (max-width: 480px) {
-  .logo img {
-    height: 85px;
-  }
-
-  header {
-    height: 65px;
-    padding: 0 1rem;
-    justify-content: flex-end;
-    position: sticky;
-    top: 0;
-  }
-
-  .logo {
-    left: 0.5rem;
-    top: 10px;
-  }
-
-  .header-buttons .cta {
-    padding: 0.45rem 0.75rem;
-    font-size: 0.75rem;
-  }
-
-  .hero {
-    padding: 3rem 1rem;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .hero::before,
-  .hero::after {
-    width: 250px;
-    height: 250px;
-  }
-
-  .cta {
-    padding: 0.9rem 1.5rem;
-    font-size: 0.95rem;
-  }
-
-  .feature-card {
-    padding: 1.5rem 1.25rem;
-  }
-
-  .feature-card h3 {
-    font-size: 1.4rem;
-  }
-
-  .feature-card p {
-    font-size: 1rem;
-  }
-
-  .content-section h1 {
-    font-size: 1.75rem;
-  }
-
-  .container {
-    padding: 0.75rem;
-  }
-
-  nav {
-    width: 100%;
-    right: -100%;
-    padding: 5rem 1.5rem 3rem;
-  }
-
-  nav.active {
-    right: 0;
-  }
-
-  nav a {
-    font-size: 1rem;
-  }
-
-  [style*="font-size: 2.5rem"] {
-    font-size: 2rem !important;
-  }
-
-  [style*="font-size: 2rem"] {
-    font-size: 1.6rem !important;
-  }
-
-  [style*="font-size: 1.8rem"] {
-    font-size: 1.5rem !important;
-  }
-
-}
-
-/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -689,17 +453,11 @@ ul {
   animation: fadeIn 0.3s ease;
 }
 
-.modal.active {
-  display: flex;
-}
+.modal.active { display: flex; }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .modal-content {
@@ -717,14 +475,8 @@ ul {
 }
 
 @keyframes slideUp {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .modal-content h2 {
@@ -751,9 +503,7 @@ ul {
   transition: transform 0.2s ease;
 }
 
-.modal-close:hover {
-  transform: scale(1.1);
-}
+.modal-close:hover { transform: scale(1.1); }
 
 .pricing-grid {
   display: grid;
@@ -789,10 +539,7 @@ ul {
   margin: 1rem 0;
 }
 
-.pricing-card ul {
-  list-style: none;
-  padding: 0;
-}
+.pricing-card ul { list-style: none; padding: 0; }
 
 .pricing-card li {
   color: var(--gray);
@@ -800,9 +547,7 @@ ul {
   border-bottom: 1px solid #eee;
 }
 
-.pricing-card li:last-child {
-  border-bottom: none;
-}
+.pricing-card li:last-child { border-bottom: none; }
 
 .pricing-card li::before {
   content: '✓ ';
@@ -813,7 +558,7 @@ ul {
 
 .modal-note {
   text-align: center;
-  color: #fff;
+  color: var(--dark);
   margin: 2rem 0;
   font-size: 1.1rem;
 }
@@ -824,27 +569,14 @@ ul {
   text-align: center;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .modal-content {
-    padding: 2rem 1.5rem;
-    width: 95%;
-  }
+/* =========================
+   CONTACT CTA
+========================= */
 
-  .modal-content h2 {
-    font-size: 1.8rem;
-  }
+.contact-cta { padding: 60px 20px; }
 
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-}
-body .contact-cta {
-  padding: 60px 20px;
-}
-
-body .contact-cta-content {
-  background: rgba(0, 0, 0, 0.5); /* černá, 40 % */
+.contact-cta-content {
+  background: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 40px;
   border-radius: 12px;
@@ -852,6 +584,146 @@ body .contact-cta-content {
   margin: 0 auto;
 }
 
-body .contact-cta-content a {
-  color: #fff;
+.contact-cta-content a { color: #fff; }
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .container { padding: 1rem 1.5rem; }
+
+  .header-buttons .cta {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding: 7.5rem 1.5rem 5rem 1.5rem;
+    min-height: 480px;
+  }
+
+  .hero-content {
+  width: min(1000px, 92vw);
+  margin-left: auto;
+  padding-right: 2rem; /* tohle je ten správnej odstup od okraje */
+  text-align: right;
+}
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 1rem; }
+
+  header {
+    height: 75px;
+    padding: 0 1.5rem;
+  }
+
+  .logo {
+    left: 1rem;
+    top: 15px;
+  }
+
+  .logo img { height: 120px; }
+
+  .header-buttons { gap: 0.5rem; }
+
+  .header-buttons .cta {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    padding: 5.5rem 1rem 3.5rem 1rem;
+    min-height: 380px;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding-right: 1rem;
+  }
+
+  /* Na tabletu už dovolíme zalomení, aby nikdy nic neuteklo */
+  .hero h1 {
+    white-space: normal;
+  }
+
+  .cta {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature-card { padding: 2rem 1.5rem; }
+
+  .content-section { padding: 2rem 1rem; }
+  .content-section h1 { font-size: 2rem; margin-bottom: 2rem; }
+
+  .card { padding: 2rem 1.5rem; }
+
+  footer {
+    padding: 3rem 1.5rem 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .modal-content {
+    padding: 2rem 1.5rem;
+    width: 95%;
+  }
+
+  .modal-content h2 { font-size: 1.8rem; }
+  .pricing-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 65px;
+    padding: 0 1rem;
+  }
+
+  .logo {
+    left: 0.5rem;
+    top: 10px;
+  }
+
+  .logo img { height: 85px; }
+
+  .header-buttons .cta {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    padding: 4.5rem 0.75rem 2.5rem 0.75rem;
+    min-height: 300px;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding-right: 0.5rem;
+  }
+
+  .feature-card { padding: 1.5rem 1.25rem; }
+  .feature-card h3 { font-size: 1.4rem; }
+  .feature-card p { font-size: 1rem; }
+
+  .content-section h1 { font-size: 1.75rem; }
+
+  .container { padding: 0.75rem; }
+
+  .modal-content { width: 95%; }
 }
