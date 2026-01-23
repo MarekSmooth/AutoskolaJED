@@ -123,20 +123,17 @@ header {
 
 .hero {
   padding: 10rem 2rem 8rem 2rem;
-  text-align: right;
   border-radius: 0;
   margin: 0;
   position: relative;
   overflow: hidden;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  min-height: 600px;
 }
 
 .hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  display: block;
+  width: 100%;
 }
 
 /*.hero::after {
@@ -167,26 +164,35 @@ header {
   padding: 1.5rem 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  display: inline-block;
+  display: block;
+  width: 1100px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: 2rem;
 }
 
 
-.hero p,
 .hero-subtitle {
-  font-size: 1.35rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.56rem;
   color: #fff;
   margin-bottom: 2.5rem;
-  max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
+  line-height: 1.15;
   position: relative;
   z-index: 1;
-  font-weight: 500;
+  font-weight: 700;
   background: rgba(0, 0, 0, 0.6);
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.04em;
+  display: block;
+  width: 1100px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: 2rem;
 }
 
 .cta {
