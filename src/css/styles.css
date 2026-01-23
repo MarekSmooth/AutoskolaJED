@@ -65,7 +65,13 @@ header {
 }
 
 
-header > .cta {
+.header-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header-buttons .cta {
   padding: 0.6rem 1rem;
   font-size: 0.95rem;
   box-shadow: 0 2px 8px rgba(245, 130, 32, 0.2);
@@ -73,7 +79,7 @@ header > .cta {
   flex-shrink: 0;
 }
 
-header > .cta:hover {
+.header-buttons .cta:hover {
   box-shadow: 0 4px 12px rgba(245, 130, 32, 0.3);
 }
 
@@ -406,11 +412,13 @@ ul {
     height: 100px;
   }
 
-  header > .cta {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-    margin: 0;
-    flex-shrink: 0;
+  .header-buttons {
+    gap: 0.5rem;
+  }
+
+  .header-buttons .cta {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
   }
 
   nav {
@@ -514,11 +522,6 @@ ul {
     gap: 2rem;
   }
 
-  header > .cta {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-    margin-right: 1.5rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -539,11 +542,9 @@ ul {
     top: 10px;
   }
 
-  header > .cta {
-    padding: 0.45rem 0.85rem;
-    font-size: 0.8rem;
-    margin: 0;
-    flex-shrink: 0;
+  .header-buttons .cta {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.75rem;
   }
 
   .hero {
@@ -616,11 +617,6 @@ ul {
     font-size: 1.5rem !important;
   }
 
-  header > .cta {
-    padding: 0.45rem 0.85rem;
-    font-size: 0.8rem;
-    margin-right: 0.75rem;
-  }
 }
 
 /* Modal */
