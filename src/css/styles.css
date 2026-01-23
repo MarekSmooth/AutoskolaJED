@@ -124,6 +124,13 @@ header {
   max-width: 800px;
 }
 
+.hero-content {
+  width: fit-content;      /* nebo inline-block */
+  max-width: 800px;
+  margin-left: auto;       /* posune celý box doprava */
+  text-align: right;
+}
+
 
 .hero p,
 .hero-subtitle {
