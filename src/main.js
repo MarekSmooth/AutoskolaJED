@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const kontaktFromModal = document.getElementById('kontakt-from-modal');
 
   if (cenikBtn && cenikModal) {
-    cenikBtn.addEventListener('click', () => {
+    cenikBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       cenikModal.classList.add('active');
       body.style.overflow = 'hidden';
     });

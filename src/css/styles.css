@@ -1,8 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Lora:wght@600;700&display=swap');
-@import '@fontsource/orbitron/400.css';
-@import '@fontsource/orbitron/500.css';
-@import '@fontsource/orbitron/600.css';
-@import '@fontsource/orbitron/700.css';
+
+/* Orbitron font - local version with full Unicode support */
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Regular-BF66babf324fbdd.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Medium-BF66babf321bef0.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-SemiBold-BF66babf323d53a.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Bold-BF66babf3200d61.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-ExtraBold-BF66babf320fac7.ttf') format('truetype');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Black-BF66babf32268a1.ttf') format('truetype');
+  font-weight: 900;
+}
 
 
 :root {
@@ -90,11 +123,20 @@ header {
 
 .hero {
   padding: 10rem 2rem 8rem 2rem;
-  text-align: center;
+  text-align: right;
   border-radius: 0;
   margin: 0;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 /*.hero::after {
@@ -121,20 +163,11 @@ header {
   line-height: 1.15;
   position: relative;
   z-index: 1;
-  letter-spacing: -0.02em;
   background: rgba(0, 0, 0, 0.6);
   padding: 1.5rem 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: inline-block;
-  max-width: 800px;
-}
-
-.hero-content {
-  width: fit-content;      /* nebo inline-block */
-  max-width: 800px;
-  margin-left: auto;       /* posune celý box doprava */
-  text-align: right;
 }
 
 
@@ -693,6 +726,7 @@ ul {
   margin-bottom: 2rem;
   font-size: 2.2rem;
   text-align: center;
+  letter-spacing: 0.04em;
   background: linear-gradient(135deg, var(--blue) 0%, var(--orange) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
