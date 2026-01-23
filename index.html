@@ -1,146 +1,164 @@
 <!doctype html>
-<link rel="stylesheet" href="styles.css">
 <html lang="cs">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Autoškola JEĎ! Brno – řidičák v pohodě</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>Autoškola JEĎ! Brno – řidičák v pohodě</title>
 
-<meta name="description" content="Autoškola v Brně. Kurzy sk. B, kondiční jízdy, školení řidičů. Přátelský přístup, moderní vozy, férové ceny." />
-<meta property="og:title" content="Autoškola JEĎ! Brno" />
-<meta property="og:description" content="Řidičák v pohodě – kurzy B, kondičky, dárkové poukazy." />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="./public/og-cover.jpg" />
-<link rel="icon" href="./public/favicon.ico" />
-<link rel="stylesheet" href="./src/css/styles.css" />
+  <meta name="description" content="Autoškola v Brně. Kurzy sk. B, kondiční jízdy, školení řidičů. Přátelský přístup, moderní vozy, férové ceny." />
+  <meta property="og:title" content="Autoškola JEĎ! Brno" />
+  <meta property="og:description" content="Řidičák v pohodě – kurzy B, kondičky, dárkové poukazy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-cover.jpg" />
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Google Fonts: Orbitron -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Tvůj CSS (JEN TENHLE JEDEN) -->
+  <link rel="stylesheet" href="./src/css/styles.css" />
 </head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <body>
-<header>
-<a href="./index.html" class="logo">
-<img src="./public/LogoAJED.png" alt="Autoškola JEĎ! Brno" />
-</a>
-<div class="header-buttons">
-<button class="cta" id="cenik-btn">Ceník</button>
-<a href="#kontakt" class="cta">Kontaktujte nás</a>
-</div>
+
+<header class="header">
+  <a href="/" class="logo">
+    <img src="/LogoAJED.png" alt="Autoškola JEĎ! Brno" />
+  </a>
+
+  <div class="header-buttons">
+    <button class="cta" id="cenik-btn">Ceník</button>
+    <a href="#kontakt" class="cta cta-secondary">Kontaktujte nás</a>
+  </div>
 </header>
 
-
 <main id="app" class="container">
-<section class="hero">
-<div class="hero-content">
-<h1>AUTOŠKOLA JEDU! BRNO</h1>
-<p class="hero-subtitle">Malá utoškola s rodinnou atmosféru</p>
-</div>
-</section>
 
-<!-- Modal pro Ceník -->
-<div id="cenik-modal" class="modal">
-<div class="modal-content">
-<button class="modal-close">&times;</button>
-<h2>Ceník našich služeb</h2>
-<div class="pricing-grid">
-<div class="pricing-card">
-<h3>Řidičský průkaz - Skupiny B</h3>
-<p class="price">22 200 Kč</p>
-<ul>
-<li>Teoretická výuka</li>
-<li>Praktické jízdy (10 hodin)</li>
-<li>Příprava na zkoušku</li>
-<li>Konzultace instruktora</li>
-</ul>
-</div>
-<div class="pricing-card">
-<h3>Doplňkové jízdy</h3>
-<p class="price">1 200 Kč/ 90 minut</p>
-<ul>
-<li>Individuální výuka</li>
-<li>Flexibilní termíny</li>
-<li>Zkušený instruktor</li>
-<li>Bezpečné vozy</li>
-</ul>
-</div>
-<div class="pricing-card">
-<h3>Kondiční jízdy</h3>
-<p class="price">1 400 Kč/ 90 minut</p>
-<ul>
-<li>Individuální výuka</li>
-<li>Flexibilní termíny</li>
-<li>Zkušený instruktor</li>
-<li>Bezpečné vozy</li>
-</ul>
-</div>
-</div>
-<p class="modal-note">Máte zájem? Kontaktujte nás a domluvte si termín!</p>
-<a href="#kontakt" class="cta" id="kontakt-from-modal">Kontaktovat</a>
-</div>
-</div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>AUTOŠKOLA JEĎ! BRNO</h1>
+      <p class="hero-subtitle">Malá autoškola s rodinnou atmosférou</p>
+    </div>
+  </section>
 
-<div class="features">
-<div class="feature-card">
-<h3>Profesionální přístup</h3>
-<p>Náš zkušený instruktor s dlouholetými zkušenostmi se vzděláváním mládeže ti pomůže zvládnout řízení bezpečně a sebevědomě. Důraz klademe na praktické dovednosti a přátelskou atmosféru.</p>
-</div>
-<div class="feature-card">
-<h3>Moderní vozový park</h3>
-<p>Výuka probíhá v nových vozech vybavených nejmodernější technikou. Bezpečnost a pohodlí jsou pro nás prioritou.</p>
-</div>
-<div class="feature-card">
-<h3>Flexibilní termíny</h3>
-<p>Přizpůsobíme se tvému harmonogramu. Jízdy nabízíme ve všední dny i o víkendech, ráno i večer.</p>
-</div>
-</div>
+  <!-- Modal pro Ceník -->
+  <div id="cenik-modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="cenik-title">
+      <button class="modal-close" type="button" aria-label="Zavřít">&times;</button>
+
+      <h2 id="cenik-title">Ceník našich služeb</h2>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Řidičský průkaz - Skupiny B</h3>
+          <p class="price">22 200 Kč</p>
+          <ul>
+            <li>Teoretická výuka</li>
+            <li>Praktické jízdy (10 hodin)</li>
+            <li>Příprava na zkoušku</li>
+            <li>Konzultace instruktora</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Doplňkové jízdy</h3>
+          <p class="price">1 200 Kč / 90 minut</p>
+          <ul>
+            <li>Individuální výuka</li>
+            <li>Flexibilní termíny</li>
+            <li>Zkušený instruktor</li>
+            <li>Bezpečné vozy</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Kondiční jízdy</h3>
+          <p class="price">1 400 Kč / 90 minut</p>
+          <ul>
+            <li>Individuální výuka</li>
+            <li>Flexibilní termíny</li>
+            <li>Zkušený instruktor</li>
+            <li>Bezpečné vozy</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="modal-note">Máte zájem? Kontaktujte nás a domluvte si termín!</p>
+      <a href="#kontakt" class="cta" id="kontakt-from-modal">Kontaktovat</a>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature-card">
+      <h3>Profesionální přístup</h3>
+      <p>Náš zkušený instruktor ti pomůže zvládnout řízení bezpečně a sebevědomě. Důraz klademe na praxi a přátelskou atmosféru.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Moderní vozový park</h3>
+      <p>Výuka probíhá v moderních vozech. Bezpečnost a pohodlí jsou pro nás prioritou.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Flexibilní termíny</h3>
+      <p>Jízdy nabízíme ve všední dny i o víkendech, ráno i večer. Přizpůsobíme se tvému harmonogramu.</p>
+    </div>
+  </div>
+
 </main>
 
 <section class="contact-cta">
-<div class="contact-cta-content container">
-<h2>Máte otázky?</h2>
-<p class="contact-cta-subtitle">Kontaktujte nás a domluvte si bezplatnou konzultaci. Odpovídáme rychle!</p>
-<div class="contact-cta-buttons">
-<a href="tel:+420123456789" class="cta">Zavolejte nám</a>
-<a href="mailto:info@autoskolaajed.cz" class="cta cta-secondary">Napište nám</a>
-</div>
-<div class="contact-cta-info">
-<div class="contact-info-item">
-<strong>Tel:</strong> <a href="tel:+420123456789">+420 123 456 789</a>
-</div>
-<div class="contact-info-item">
-<strong>Email:</strong> <a href="mailto:info@autoskolaajed.cz">info@autoskolaajed.cz</a>
-</div>
-<div class="contact-info-item">
-<strong>Město:</strong> Brno, Česká republika
-</div>
-</div>
-</div>
+  <div class="contact-cta-content container">
+    <h2>Máte otázky?</h2>
+    <p class="contact-cta-subtitle">Kontaktujte nás a domluvte si bezplatnou konzultaci. Odpovídáme rychle!</p>
+
+    <div class="contact-cta-buttons">
+      <a href="tel:+420123456789" class="cta">Zavolejte nám</a>
+      <a href="mailto:info@autoskolaajed.cz" class="cta cta-secondary">Napište nám</a>
+    </div>
+
+    <div class="contact-cta-info">
+      <div class="contact-info-item">
+        <strong>Tel:</strong> <a href="tel:+420123456789">+420 123 456 789</a>
+      </div>
+      <div class="contact-info-item">
+        <strong>Email:</strong> <a href="mailto:info@autoskolaajed.cz">info@autoskolaajed.cz</a>
+      </div>
+      <div class="contact-info-item">
+        <strong>Město:</strong> Brno, Česká republika
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer id="kontakt">
-<div class="footer-content container">
-<div class="footer-section">
-<h3>Autoškola JEĎ!</h3>
-<p>Tvoje autoškola v Brně<br>
-Moderní výuka řízení<br>
-Sk. B a kondiční jízdy</p>
-</div>
-<div class="footer-section">
-<h3>Kontakt</h3>
-<p>Tel: <a href="tel:+420123456789">+420 123 456 789</a><br>
-Email: <a href="mailto:info@autoskolaajed.cz">info@autoskolaajed.cz</a><br>
-Brno, Česká republika</p>
-</div>
-<div class="footer-section">
+  <div class="footer-content container">
+    <div class="footer-section">
+      <h3>Autoškola JEĎ!</h3>
+      <p>Tvoje autoškola v Brně<br>Moderní výuka řízení<br>Sk. B a kondiční jízdy</p>
+    </div>
 
-</div>
-<div class="footer-bottom container">
-<small>© 2025 Autoškola JEĎ! Brno. Všechna práva vyhrazena.</small>
-</div>
+    <div class="footer-section">
+      <h3>Kontakt</h3>
+      <p>
+        Tel: <a href="tel:+420123456789">+420 123 456 789</a><br>
+        Email: <a href="mailto:info@autoskolaajed.cz">info@autoskolaajed.cz</a><br>
+        Brno, Česká republika
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom container">
+    <small>© 2025 Autoškola JEĎ! Brno. Všechna práva vyhrazena.</small>
+  </div>
 </footer>
-
 
 <script type="module" src="./src/main.js"></script>
 </body>
