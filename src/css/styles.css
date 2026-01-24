@@ -254,6 +254,7 @@ header {
   font-weight: 800;
   position: relative;
   z-index: 2;
+  display: none;
   text-shadow: 
     2px 2px 0 #000,
     -2px 2px 0 #000,
@@ -777,6 +778,10 @@ ul { list-style: none; padding: 0; }
   .features {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
   }
 
   .feature-card { padding: 2rem 1.5rem; }
