@@ -116,9 +116,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Zavření modalu po kliknutí na "Kontaktovat"
-    kontaktFromModal.addEventListener('click', () => {
+    kontaktFromModal.addEventListener('click', (e) => {
+      e.preventDefault();
       cenikModal.classList.remove('active');
       body.style.overflow = '';
+      
+      // Scrollnout na footer
+      const footer = document.getElementById('kontakt');
+      if (footer) {
+        const footerPosition = footer.offsetTop;
+        smoothScrollTo(footerPosition);
+      }
     });
 
     // Zavření modalu na ESC
