@@ -479,7 +479,7 @@ button:hover {
 footer {
   background: transparent;
   color: #fff;
-  padding: 2rem 2rem 1rem;
+  padding: 1rem 2rem 0.5rem;
   margin-top: 3rem;
   position: relative;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -498,29 +498,30 @@ footer::before {
 .footer-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
   max-width: var(--max);
   margin: 0 auto;
 }
 
 .footer-section h3 {
   color: var(--orange);
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
 }
 
 .footer-section {
   background: rgba(0, 0, 0, 0.6);
-  padding: 1.25rem 1.5rem;
+  padding: 0.8rem 1rem;
   border-radius: 12px;
 }
 
 .footer-section p,
 .footer-section a {
   color: #fff;
-  line-height: 1.6;
+  line-height: 1.3;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: 0.75rem;
 }
 
 .footer-section a:hover {
@@ -530,8 +531,8 @@ footer::before {
 
 .social-links {
   display: flex;
-  gap: 1.5rem;
-  margin-top: 0.5rem;
+  gap: 1rem;
+  margin-top: 0.25rem;
 }
 
 .social-links a {
@@ -557,13 +558,13 @@ footer::before {
 
 .footer-bottom {
   text-align: center;
-  padding-top: 1rem;
-  margin-top: 1rem;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
   border-top: 1px solid rgba(255,255,255,0.1);
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 0.825rem;
   background: rgba(0, 0, 0, 0.6);
-  padding: 1.25rem 1.5rem;
+  padding: 0.8rem 1rem;
   border-radius: 12px;
 }
 
