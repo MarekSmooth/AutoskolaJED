@@ -237,7 +237,7 @@ header {
 .features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  gap: 1.5rem;
   margin: 5rem auto;
   max-width: 78%;
 }
@@ -247,7 +247,7 @@ header {
 }
 
 .feature-card {
-  padding: 3rem 2.5rem;
+  padding: 1.5rem 2.5rem;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -600,11 +600,27 @@ ul { list-style: none; padding: 0; }
   text-align: center;
 }
 
+.phone-number {
+  white-space: nowrap;
+}
+
 .contact-cta-content a { color: #fff; }
 
 /* =========================
    RESPONSIVE
 ========================= */
+
+@media (max-width: 1600px) {
+  .feature-card h3 { font-size: 1.8rem; }
+  .feature-card p { font-size: 1.2rem; }
+  .contact-cta-content h2 { font-size: 2.1em; }
+}
+
+@media (max-width: 1400px) {
+  .feature-card h3 { font-size: 1.65rem; }
+  .feature-card p { font-size: 1.1rem; }
+  .contact-cta-content h2 { font-size: 1.9em; }
+}
 
 @media (max-width: 1024px) {
   .container { padding: 1rem 1.5rem; }
@@ -630,6 +646,10 @@ ul { list-style: none; padding: 0; }
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
+
+  .feature-card h3 { font-size: 1.5rem; }
+  .feature-card p { font-size: 1rem; }
+  .contact-cta-content h2 { font-size: 1.7em; }
 }
 
 @media (max-width: 768px) {
@@ -680,6 +700,8 @@ ul { list-style: none; padding: 0; }
   }
 
   .feature-card { padding: 2rem 1.5rem; }
+
+  .contact-cta-content h2 { font-size: 1.5em; }
 
   .content-section { padding: 2rem 1rem; }
   .content-section h1 { font-size: 2rem; margin-bottom: 2rem; }
@@ -736,6 +758,8 @@ ul { list-style: none; padding: 0; }
   .feature-card { padding: 1.5rem 1.25rem; }
   .feature-card h3 { font-size: 1.4rem; }
   .feature-card p { font-size: 1rem; }
+
+  .contact-cta-content h2 { font-size: 1.3em; }
 
   .content-section h1 { font-size: 1.75rem; }
 
