@@ -236,9 +236,14 @@ header {
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
-  margin: 5rem 0;
+  margin: 5rem auto;
+  max-width: 78%;
+}
+
+.feature-card-wide {
+  grid-column: 1 / -1;
 }
 
 .feature-card {
@@ -274,17 +279,19 @@ header {
 .feature-card:hover::before { transform: scaleX(1); }
 
 .feature-card h3 {
-  font-size: 1.6rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: #fff;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .feature-card p {
   color: #fff;
   line-height: 1.75;
-  font-size: 1.05rem;
+  font-size: 1.31rem;
 }
 
 /* =========================
@@ -582,6 +589,15 @@ ul { list-style: none; padding: 0; }
   border-radius: 12px;
   max-width: 900px;
   margin: 0 auto;
+}
+
+.contact-cta-content h2 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  font-size: 2.26em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
 }
 
 .contact-cta-content a { color: #fff; }
