@@ -94,6 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       cenikModal.classList.add('active');
       body.style.overflow = 'hidden';
+      
+      // Reset scroll position modalu na začátek
+      const modalContent = cenikModal.querySelector('.modal-content');
+      if (modalContent) {
+        modalContent.scrollTop = 0;
+      }
     });
 
     modalClose.addEventListener('click', () => {
