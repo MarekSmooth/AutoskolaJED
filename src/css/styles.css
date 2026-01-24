@@ -284,6 +284,12 @@ header {
   }
 }
 
+.scroll-indicator-bottom {
+  position: relative;
+  margin: 3rem auto 2rem;
+  bottom: auto;
+}
+
 /* =========================
    BUTTONS
 ========================= */

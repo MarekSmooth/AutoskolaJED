@@ -34,28 +34,52 @@ document.addEventListener('DOMContentLoaded', () => {
   // Kliknutí na scroll indicator
   if (scrollIndicator) {
     scrollIndicator.addEventListener('click', () => {
-      const targetPosition = window.innerHeight;
-      const startPosition = window.pageYOffset;
-      const distance = targetPosition - startPosition;
-      const duration = 1500; // 1.5 sekundy pro pomalejší scroll
-      let start = null;
-      
-      function animation(currentTime) {
-        if (start === null) start = currentTime;
-        const timeElapsed = currentTime - start;
-        const run = ease(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
+      smoothScrollTo(window.innerHeight);
+    });
+  }
+
+  // Kliknutí na druhou scroll indicator (dole)
+  const scrollIndicatorBottom = document.getElementById('scroll-indicator-bottom');
+  if (scrollIndicatorBottom) {
+    scrollIndicatorBottom.addEventListener('click', () => {
+      smoothScrollTo(document.body.scrollHeight);
+    });
+  }
+
+  // Smooth scroll funkce pro opakované použití
+  function smoothScrollTo(targetPosition, duration = 1500) {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let start = null;
+    
+    function animation(currentTime) {
+      if (start === null) start = currentTime;
+      const timeElapsed = currentTime - start;
+      const run = ease(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+    
+    function ease(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+    
+    requestAnimationFrame(animation);
+  }
+
+  // Kliknutí na tlačítko "Kontaktujte nás"
+  const kontaktBtn = document.getElementById('kontakt-btn');
+  if (kontaktBtn) {
+    kontaktBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const footer = document.getElementById('kontakt');
+      if (footer) {
+        const footerPosition = footer.offsetTop;
+        smoothScrollTo(footerPosition);
       }
-      
-      function ease(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
-      }
-      
-      requestAnimationFrame(animation);
     });
   }
 
