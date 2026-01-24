@@ -477,11 +477,10 @@ button:hover {
 ========================= */
 
 footer {
-  background: rgba(26, 26, 26, 0.85);
-  backdrop-filter: blur(12px);
+  background: transparent;
   color: #fff;
-  padding: 4rem 2rem 2rem;
-  margin-top: 6rem;
+  padding: 2rem 2rem 1rem;
+  margin-top: 3rem;
   position: relative;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -498,22 +497,28 @@ footer::before {
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   max-width: var(--max);
   margin: 0 auto;
 }
 
 .footer-section h3 {
   color: var(--orange);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 1.2rem;
+}
+
+.footer-section {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
 }
 
 .footer-section p,
 .footer-section a {
-  color: #e0e0e0;
-  line-height: 2;
+  color: #fff;
+  line-height: 1.6;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -523,13 +528,54 @@ footer::before {
   text-decoration: underline;
 }
 
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--orange);
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+.social-links svg {
+  width: 100%;
+  height: 100%;
+}
+
 .footer-bottom {
   text-align: center;
-  padding-top: 2rem;
-  margin-top: 2rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
   border-top: 1px solid rgba(255,255,255,0.1);
-  color: #a0a0a0;
-  font-size: 0.95rem;
+  color: #fff;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: var(--orange);
+  text-decoration: underline;
 }
 
 ul { list-style: none; padding: 0; }
@@ -717,6 +763,10 @@ ul { list-style: none; padding: 0; }
 
 @media (max-width: 1024px) {
   .container { padding: 1rem 1.5rem; }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .header-buttons .cta {
     padding: 0.6rem 1rem;
