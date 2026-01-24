@@ -223,7 +223,7 @@ header {
   align-items: center;
   gap: 20px;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.5s ease;
   z-index: 10;
   cursor: pointer;
 }
@@ -231,6 +231,14 @@ header {
 .scroll-indicator.hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.scroll-indicator.flipped {
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.scroll-indicator.flipped .scroll-arrow {
+  animation: bounceFlipped 2s infinite;
 }
 
 .scroll-arrow {
@@ -294,6 +302,29 @@ header {
   margin-top: -2rem;
   margin-bottom: 2rem;
   bottom: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.5s ease;
+}
+
+.scroll-indicator-bottom.flipped {
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.scroll-indicator-bottom.flipped .scroll-arrow {
+  animation: bounceFlipped 2s infinite;
+}
+
+@keyframes bounceFlipped {
+  0%, 20%, 50%, 80%, 100% {
+    transform: rotate(-45deg) translateY(0);
+  }
+  40% {
+    transform: rotate(-45deg) translateY(15px);
+  }
+  60% {
+    transform: rotate(-45deg) translateY(8px);
+  }
 }
 
 /* =========================
