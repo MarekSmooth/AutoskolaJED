@@ -115,6 +115,8 @@ header {
 .header-buttons .cta {
   padding: 0.7rem 1.2rem;
   font-size: 0.95rem;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 0.04em;
   box-shadow: 0 2px 8px rgba(245, 130, 32, 0.2);
   margin: 0;
   flex-shrink: 0;
@@ -202,6 +204,60 @@ header {
   font-size: clamp(1.1rem, 2.2vw, 2.2rem);
 }
 
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.scroll-indicator.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scroll-arrow {
+  width: 45px;
+  height: 45px;
+  border-left: 4px solid var(--orange);
+  border-bottom: 4px solid var(--orange);
+  transform: rotate(-45deg);
+  animation: bounce 2s infinite;
+  filter: drop-shadow(0 0 15px rgba(245, 130, 32, 0.9));
+}
+
+.scroll-text {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.1rem;
+  color: var(--orange);
+  letter-spacing: 0.2em;
+  font-weight: 800;
+  text-shadow: 0 0 20px rgba(245, 130, 32, 0.8), 0 0 30px rgba(245, 130, 32, 0.5);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: rotate(-45deg) translateY(0);
+  }
+  40% {
+    transform: rotate(-45deg) translateY(-15px);
+  }
+  60% {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
 
 /* =========================
    BUTTONS

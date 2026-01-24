@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scroll effect na header
   let lastScrollY = 0;
+  const scrollIndicator = document.getElementById('scroll-indicator');
+  
   window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
     
@@ -16,8 +18,28 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       header.classList.remove('scrolled');
     }
+    
+    // Skrýt scroll indicator po scrollu
+    if (scrollIndicator) {
+      if (currentScrollY > 100) {
+        scrollIndicator.classList.add('hidden');
+      } else {
+        scrollIndicator.classList.remove('hidden');
+      }
+    }
+    
     lastScrollY = currentScrollY;
   });
+
+  // Kliknutí na scroll indicator
+  if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    });
+  }
 
   // Modal pro Ceník
   const cenikBtn = document.getElementById('cenik-btn');
