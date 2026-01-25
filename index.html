@@ -53,7 +53,7 @@
   <!-- Modal pro Ceník -->
   <div id="cenik-modal" class="modal" aria-hidden="true">
     <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="cenik-title">
-      <button class="modal-close" type="button" aria-label="Zavřít">&times;</button>
+      <button class="modal-close modal-close-sticky" type="button" aria-label="Zavřít">&times;</button>
 
       <h2 id="cenik-title">Ceník našich služeb</h2>
 
@@ -97,6 +97,68 @@
 
       <p class="modal-note">Máte zájem? Kontaktujte nás a domluvte si termín!</p>
       <a href="#kontakt" class="cta" id="kontakt-from-modal">Kontaktovat</a>
+    </div>
+  </div>
+
+  <!-- Modal pro GDPR -->
+  <div id="gdpr-modal" class="modal" aria-hidden="true">
+    <div class="modal-content gdpr-content" role="dialog" aria-modal="true" aria-labelledby="gdpr-title">
+      <button class="modal-close gdpr-close" type="button" aria-label="Zavřít">&times;</button>
+
+      <h2 id="gdpr-title">Zásady ochrany osobních údajů (GDPR)</h2>
+
+      <div class="gdpr-text">
+        <h3>1. Kdo je správcem osobních údajů</h3>
+        <p>Správcem osobních údajů je:</p>
+        <p><strong>Autoškola JEDU</strong><br>(dále jen „správce")</p>
+        <p>Kontaktní údaje správce jsou uvedeny na těchto webových stránkách v sekci Kontakty.</p>
+
+        <h3>2. Jaké osobní údaje zpracováváme</h3>
+        <p>Tyto webové stránky jsou čistě informativní.<br>
+        Zpracováváme pouze minimální rozsah osobních údajů, konkrétně:</p>
+        <ul>
+          <li>jméno, e-mailová adresa nebo telefonní číslo, pokud nás kontaktujete,</li>
+          <li>technické údaje o návštěvě webu (např. IP adresa), které jsou automaticky zaznamenávány webovým serverem.</li>
+        </ul>
+
+        <h3>3. Za jakým účelem osobní údaje zpracováváme</h3>
+        <p>Osobní údaje zpracováváme pouze za účelem:</p>
+        <ul>
+          <li>vyřízení dotazů zaslaných e-mailem nebo telefonicky,</li>
+          <li>zajištění správného technického fungování webových stránek.</li>
+        </ul>
+        <p>Osobní údaje nevyužíváme k marketingu ani je nepředáváme třetím stranám.</p>
+
+        <h3>4. Právní základ zpracování</h3>
+        <p>Zpracování osobních údajů probíhá na základě:</p>
+        <ul>
+          <li>oprávněného zájmu správce (komunikace se zájemci o služby),</li>
+          <li>plnění právních povinností, pokud to vyžaduje zákon.</li>
+        </ul>
+
+        <h3>5. Doba uchování osobních údajů</h3>
+        <p>Osobní údaje uchováváme pouze po dobu nezbytně nutnou k vyřízení dotazu nebo komunikace, případně po dobu stanovenou právními předpisy.</p>
+
+        <h3>6. Cookies</h3>
+        <p>Tyto webové stránky používají pouze technické cookies, které jsou nezbytné pro jejich správné fungování.</p>
+        <p>Nepoužíváme žádné analytické ani marketingové cookies a neprovádíme sledování návštěvníků.</p>
+
+        <h3>7. Komu jsou osobní údaje zpřístupněny</h3>
+        <p>Osobní údaje nejsou předávány žádným třetím stranám, s výjimkou případů, kdy to vyžaduje zákon.</p>
+
+        <h3>8. Práva subjektu údajů</h3>
+        <p>Máte právo:</p>
+        <ul>
+          <li>požadovat přístup ke svým osobním údajům,</li>
+          <li>požadovat opravu nebo výmaz osobních údajů,</li>
+          <li>omezit zpracování osobních údajů,</li>
+          <li>vznést námitku proti zpracování,</li>
+          <li>podat stížnost u Úřadu pro ochranu osobních údajů.</li>
+        </ul>
+
+        <h3>9. Kontakt</h3>
+        <p>V případě dotazů týkajících se ochrany osobních údajů nás můžete kontaktovat prostřednictvím kontaktních údajů uvedených na těchto webových stránkách.</p>
+      </div>
     </div>
   </div>
 
@@ -183,8 +245,14 @@
   </div>
 
   <div class="footer-bottom container">
-    <small>© 2025 Autoškola JEDU! Brno. Všechna práva vyhrazena.</small>
-    <small>Design & vývoj: <a href="https://smooth-development.com/" target="_blank" rel="noopener noreferrer">Smooth Development</a></small>
+    <div class="footer-bottom-row">
+      <small>© 2025 Autoškola JEDU! Brno. Všechna práva vyhrazena.</small>
+      <small>Design & vývoj: <a href="https://smooth-development.com/" target="_blank" rel="noopener noreferrer">Smooth Development</a></small>
+    </div>
+    <small class="footer-legal">
+      <a href="#" id="gdpr-link">Ochrana osobních údajů</a> · 
+      Web používá pouze technické cookies nezbytné pro jeho správné fungování.
+    </small>
   </div>
 </footer>
 

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Scroll effect na header
   let lastScrollY = 0;
   const scrollIndicator = document.getElementById('scroll-indicator');
+  let isScrolledPastHero = false;
   
   window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
@@ -19,30 +20,74 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.remove('scrolled');
     }
     
-    // Skrýt scroll indicator po scrollu
+    // Otočit scroll indicator po scrollu dolů
     if (scrollIndicator) {
       if (currentScrollY > 100) {
-        scrollIndicator.classList.add('hidden');
+        if (!isScrolledPastHero) {
+          scrollIndicator.classList.add('flipped');
+          isScrolledPastHero = true;
+        }
       } else {
-        scrollIndicator.classList.remove('hidden');
+        if (isScrolledPastHero) {
+          scrollIndicator.classList.remove('flipped');
+          isScrolledPastHero = false;
+        }
       }
     }
     
     lastScrollY = currentScrollY;
   });
 
-  // Kliknutí na scroll indicator
+  // Kliknutí na scroll indicator - dynamické přepínání
   if (scrollIndicator) {
     scrollIndicator.addEventListener('click', () => {
-      smoothScrollTo(window.innerHeight);
+      if (isScrolledPastHero) {
+        // Jsme dole od hero - scrollnout nahoru na začátek
+        smoothScrollTo(0);
+      } else {
+        // Jsme nahoře - scrollnout dolů o blok
+        smoothScrollTo(window.innerHeight);
+      }
     });
   }
 
-  // Kliknutí na druhou scroll indicator (dole)
+  // Kliknutí na druhou scroll indicator (dole) - dynamické přepínání
   const scrollIndicatorBottom = document.getElementById('scroll-indicator-bottom');
+  let isScrolledToBottom = false;
+  
   if (scrollIndicatorBottom) {
+    // Sledování scrollu pro otočení šipky
+    window.addEventListener('scroll', () => {
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const clientHeight = window.innerHeight;
+      const bottomThreshold = 200; // Tolerance pro "jsem dole"
+      
+      // Zjistit, jestli jsme dole
+      if (scrollHeight - scrollTop - clientHeight < bottomThreshold) {
+        if (!isScrolledToBottom) {
+          scrollIndicatorBottom.classList.add('flipped');
+          isScrolledToBottom = true;
+        }
+      } else {
+        if (isScrolledToBottom) {
+          scrollIndicatorBottom.classList.remove('flipped');
+          isScrolledToBottom = false;
+        }
+      }
+    });
+    
+    // Kliknutí na šipku
     scrollIndicatorBottom.addEventListener('click', () => {
-      smoothScrollTo(document.body.scrollHeight);
+      if (isScrolledToBottom) {
+        // Jsme dole - scrollnout o blok nahoru
+        const currentPosition = window.scrollY;
+        const targetPosition = Math.max(0, currentPosition - window.innerHeight);
+        smoothScrollTo(targetPosition);
+      } else {
+        // Nejsme dole - scrollnout dolů
+        smoothScrollTo(document.body.scrollHeight);
+      }
     });
   }
 
@@ -86,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Modal pro Ceník
   const cenikBtn = document.getElementById('cenik-btn');
   const cenikModal = document.getElementById('cenik-modal');
-  const modalClose = document.querySelector('.modal-close');
+  const modalClose = document.querySelector('.modal-close-sticky');
   const kontaktFromModal = document.getElementById('kontakt-from-modal');
 
   if (cenikBtn && cenikModal) {
@@ -133,6 +178,48 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && cenikModal.classList.contains('active')) {
         cenikModal.classList.remove('active');
+        body.style.overflow = '';
+      }
+    });
+  }
+
+  // Modal pro GDPR
+  const gdprLink = document.getElementById('gdpr-link');
+  const gdprModal = document.getElementById('gdpr-modal');
+  const gdprClose = document.querySelector('.gdpr-close');
+
+  if (gdprLink && gdprModal) {
+    gdprLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      gdprModal.classList.add('active');
+      body.style.overflow = 'hidden';
+      
+      // Reset scroll position modalu na začátek
+      const modalContent = gdprModal.querySelector('.modal-content');
+      if (modalContent) {
+        modalContent.scrollTop = 0;
+      }
+    });
+
+    if (gdprClose) {
+      gdprClose.addEventListener('click', () => {
+        gdprModal.classList.remove('active');
+        body.style.overflow = '';
+      });
+    }
+
+    // Zavření modalu po kliknutí mimo něj
+    gdprModal.addEventListener('click', (e) => {
+      if (e.target === gdprModal) {
+        gdprModal.classList.remove('active');
+        body.style.overflow = '';
+      }
+    });
+
+    // Zavření modalu na ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && gdprModal.classList.contains('active')) {
+        gdprModal.classList.remove('active');
         body.style.overflow = '';
       }
     });

@@ -136,7 +136,7 @@ header {
 ========================= */
 
 .hero {
-  padding: 10rem 2rem 8rem 2rem;
+  padding: 10rem 2rem 5.6rem 2rem;
   margin: 0 0 0 calc(-50vw + 50%);
   width: 100vw;
   min-height: 600px;
@@ -223,7 +223,7 @@ header {
   align-items: center;
   gap: 20px;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.5s ease;
   z-index: 10;
   cursor: pointer;
 }
@@ -231,6 +231,14 @@ header {
 .scroll-indicator.hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.scroll-indicator.flipped {
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.scroll-indicator.flipped .scroll-arrow {
+  animation: bounceFlipped 2s infinite;
 }
 
 .scroll-arrow {
@@ -294,6 +302,29 @@ header {
   margin-top: -2rem;
   margin-bottom: 2rem;
   bottom: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.5s ease;
+}
+
+.scroll-indicator-bottom.flipped {
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.scroll-indicator-bottom.flipped .scroll-arrow {
+  animation: bounceFlipped 2s infinite;
+}
+
+@keyframes bounceFlipped {
+  0%, 20%, 50%, 80%, 100% {
+    transform: rotate(-45deg) translateY(0);
+  }
+  40% {
+    transform: rotate(-45deg) translateY(15px);
+  }
+  60% {
+    transform: rotate(-45deg) translateY(8px);
+  }
 }
 
 /* =========================
@@ -331,7 +362,7 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  margin: 5rem auto;
+  margin: 2rem auto 5rem;
   max-width: 78%;
 }
 
@@ -560,12 +591,28 @@ footer::before {
   text-align: center;
   padding-top: 0.5rem;
   margin-top: 0.5rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(43, 158, 232, 0.3);
   color: #fff;
   font-size: 0.825rem;
   background: rgba(0, 0, 0, 0.6);
   padding: 0.8rem 1rem;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-legal {
+  opacity: 0.7;
+  font-size: 0.75rem;
 }
 
 .footer-bottom a {
@@ -652,6 +699,32 @@ ul { list-style: none; padding: 0; }
 
 .modal-close:hover { transform: scale(1.1); }
 
+/* Sticky modal close button (pro oba modály) */
+.modal-close-sticky,
+.gdpr-close {
+  position: sticky;
+  top: 1rem;
+  left: calc(100% - 50px);
+  font-size: 1.75rem;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.85);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0.8;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.modal-close-sticky:hover,
+.gdpr-close:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -714,6 +787,51 @@ ul { list-style: none; padding: 0; }
   display: block;
   margin: 2rem auto 0;
   text-align: center;
+}
+
+/* GDPR Modal specifické styly */
+.gdpr-content {
+  max-width: 800px;
+}
+
+.gdpr-content h2 {
+  margin-top: 3rem;
+}
+
+.gdpr-text {
+  text-align: left;
+  line-height: 1.8;
+}
+
+.gdpr-text h3 {
+  color: var(--orange);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.gdpr-text p {
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.gdpr-text ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  list-style: disc;
+}
+
+.gdpr-text li {
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.gdpr-text strong {
+  color: var(--orange);
+  font-weight: 600;
 }
 
 /* =========================
