@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Modal pro Ceník
   const cenikBtn = document.getElementById('cenik-btn');
   const cenikModal = document.getElementById('cenik-modal');
-  const modalClose = document.querySelector('.modal-close');
+  const modalClose = document.querySelector('.modal-close-sticky');
   const kontaktFromModal = document.getElementById('kontakt-from-modal');
 
   if (cenikBtn && cenikModal) {
@@ -178,6 +178,48 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && cenikModal.classList.contains('active')) {
         cenikModal.classList.remove('active');
+        body.style.overflow = '';
+      }
+    });
+  }
+
+  // Modal pro GDPR
+  const gdprLink = document.getElementById('gdpr-link');
+  const gdprModal = document.getElementById('gdpr-modal');
+  const gdprClose = document.querySelector('.gdpr-close');
+
+  if (gdprLink && gdprModal) {
+    gdprLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      gdprModal.classList.add('active');
+      body.style.overflow = 'hidden';
+      
+      // Reset scroll position modalu na začátek
+      const modalContent = gdprModal.querySelector('.modal-content');
+      if (modalContent) {
+        modalContent.scrollTop = 0;
+      }
+    });
+
+    if (gdprClose) {
+      gdprClose.addEventListener('click', () => {
+        gdprModal.classList.remove('active');
+        body.style.overflow = '';
+      });
+    }
+
+    // Zavření modalu po kliknutí mimo něj
+    gdprModal.addEventListener('click', (e) => {
+      if (e.target === gdprModal) {
+        gdprModal.classList.remove('active');
+        body.style.overflow = '';
+      }
+    });
+
+    // Zavření modalu na ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && gdprModal.classList.contains('active')) {
+        gdprModal.classList.remove('active');
         body.style.overflow = '';
       }
     });
