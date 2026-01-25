@@ -94,7 +94,7 @@ header {
 
 /* Logo */
 .logo {
-  position: absolute;
+  position: fixed;
   left: 2rem;
   top: 20px;
   z-index: 110;
@@ -805,6 +805,7 @@ ul { list-style: none; padding: 0; }
   }
 
   .logo {
+    position: absolute;
     left: 1rem;
     top: 15px;
   }
