@@ -1,41 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Lora:wght@600;700&display=swap');
-
 /* Orbitron font - local version with full Unicode support */
 @font-face {
   font-family: 'Orbitron';
-  src: url('/fonts/Orbitron-Regular-BF66babf324fbdd.ttf') format('truetype');
+  src: url('/fonts/Orbitron-Regular-BF66babf324fbdd.woff2') format('woff2'),
+       url('/fonts/Orbitron-Regular-BF66babf324fbdd.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Orbitron';
-  src: url('/fonts/Orbitron-Medium-BF66babf321bef0.ttf') format('truetype');
+  src: url('/fonts/Orbitron-Medium-BF66babf321bef0.woff2') format('woff2'),
+       url('/fonts/Orbitron-Medium-BF66babf321bef0.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Orbitron';
-  src: url('/fonts/Orbitron-SemiBold-BF66babf323d53a.ttf') format('truetype');
+  src: url('/fonts/Orbitron-SemiBold-BF66babf323d53a.woff2') format('woff2'),
+       url('/fonts/Orbitron-SemiBold-BF66babf323d53a.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Orbitron';
-  src: url('/fonts/Orbitron-Bold-BF66babf3200d61.ttf') format('truetype');
+  src: url('/fonts/Orbitron-Bold-BF66babf3200d61.woff2') format('woff2'),
+       url('/fonts/Orbitron-Bold-BF66babf3200d61.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Orbitron';
-  src: url('/fonts/Orbitron-ExtraBold-BF66babf320fac7.ttf') format('truetype');
+  src: url('/fonts/Orbitron-ExtraBold-BF66babf320fac7.woff2') format('woff2'),
+       url('/fonts/Orbitron-ExtraBold-BF66babf320fac7.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Orbitron';
-  src: url('/fonts/Orbitron-Black-BF66babf32268a1.ttf') format('truetype');
+  src: url('/fonts/Orbitron-Black-BF66babf32268a1.woff2') format('woff2'),
+       url('/fonts/Orbitron-Black-BF66babf32268a1.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -60,7 +70,7 @@ body {
   margin: 0;
   color: var(--dark);
   line-height: 1.6;
-  background-image: url('/background.png');
+  background-image: url('/background.webp');
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;
